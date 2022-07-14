@@ -1,0 +1,13 @@
+.card{
+    margin: 200px auto;
+}
+.footer {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background-color: #000;
+    
+}
+.footer marquee{
+    margin-top: 15px;
+}

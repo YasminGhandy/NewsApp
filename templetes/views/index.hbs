@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>News Website</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+
+<body>
+    {{!-- partial header --}}
+    {{>header}}
+    <div class="card" style="width: 40%;">
+        {{!-- using each loop   , articles --> array of objects --}}
+        {{#each articles}}
+        <div class="card-body ">
+            {{!-- @title --> key , this refers to each object , this.title --> access data --}}
+            <h5 class="card-title">{{@title}}{{this.title}}</h5>
+            <p class="card-text">{{@description}}{{this.description}}</p>
+        </div>
+        <img src={{@urlToImage}}{{this.urlToImage}} class="card-img-top" alt="...">
+        {{!-- in case something wrong happens --}}
+        {{else}}
+        <h1>Error</h1>
+        {{/each}}
+    </div>
+    {{!-- partial footer --}}
+    {{>footer}}
+</body>
+
+</html>
