@@ -17,15 +17,15 @@ hbs.registerPartials(partialPath)
 
 
 const news = require('./tools/news')
-    news((error,data)=>{
-        if(error){
-            console.log(error)
-        }
-        else{
-            app.get('/',(req,res)=>{
-                res.render('index',data)
-            })
-        }
+news((error,data)=>{
+    if(error){
+        console.log(error)
+    }
+    else{
+        app.get('/',(req,res)=>{
+            res.render('index',data)
+        })
+    }
 })
 
 app.listen(port,()=>{
