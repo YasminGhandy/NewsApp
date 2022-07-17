@@ -13,6 +13,9 @@ const news = (callback => {
         else if(response.body.message){
             callback(response.body.message,undefined)
         }
+        else if(response.body.articles.length === 0){
+            callback("Enter valid data",undefined)
+        }
         //there is no errors => getting data
         else{
             const data = response.body

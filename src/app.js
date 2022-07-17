@@ -19,7 +19,11 @@ hbs.registerPartials(partialPath)
 const news = require('./tools/news')
 news((error,data)=>{
     if(error){
-        console.log(error)
+        app.get('error',(req,res)=>{
+            res.render('404page',{
+                error: 'Error Page'
+            })
+        })
     }
     else{
         app.get('/',(req,res)=>{
