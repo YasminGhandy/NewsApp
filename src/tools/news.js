@@ -3,7 +3,7 @@
 const request = require('request')
 const news = (callback => {
     //news url
-    const url ="https://newsapi.org/v2/everything?q=Apple&from=2022-07-07&sortBy=popularity&apiKey=26a60c82ddf94e04937793fcdc684ecf"
+    const url ="https://newsapi.org/v2/everything?q=Apple&from=2022-07-07&sortBy=popularity&apiKey="
     request({url,json:true, headers: {"User-Agent": "MY IPHINE 7s",}},(error,response)=>{
         //handling error in url path
         if(error){
